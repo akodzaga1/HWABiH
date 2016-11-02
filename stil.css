@@ -1,0 +1,342 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	width: 100%;
+	background-image: url("images/photo_sat.jpg");
+	background-repeat: repeat-y;
+	background-size: 100%;
+	padding: 2%;
+	margin:auto;
+	font-size: 62.5%;
+	max-width: 2000px;
+	min-width: 300px;
+}
+
+.kolona{
+	padding: 10px;
+	float:left;
+}
+
+.kolona.jedan{
+	width: 8.33333%;
+}
+
+.kolona.dva{
+	width: 16.66666%;
+}
+
+.kolona.tri{
+	width: 24.99999%;
+}
+
+.kolona.cetiri{
+	width: 33.33333%;
+}
+
+.kolona.pet{
+	width: 41.66666%;
+}
+
+.kolona.sest{
+	width: 49.99999%;
+}
+
+.kolona.sedam{
+	width: 58.33333%;
+}
+
+.kolona.osam{
+	width: 66.66666%;
+}
+
+.kolona.devet{
+	width: 74.99999%;
+}
+
+.kolona.deset{
+	width: 83.33333%;
+}
+
+.kolona.jedanaest{
+	width: 91.66666%;
+}
+
+.kolona.dvanaest{
+	width: 99.99999%;
+}
+
+#header{
+	float:right;
+	padding-left: 0;
+
+	/*background-color: green;*/
+	
+}
+
+#header a{
+	text-decoration: none;
+	color:black;
+
+}
+
+#header a:visited, #header a:active, #header a:hover, #header a:link {
+    color: black;
+}
+
+#zaglavlje{
+	padding: 0;
+}
+
+#logo{
+	float:left;
+	/*background-color: yellow;*/
+
+}
+
+.aktivan{
+	opacity: 0.6;
+}
+
+#logo img{
+	width:100%;
+}
+
+.meni{
+	background-image: url("images/meni.png"); 
+	background-repeat: repeat-x;
+	background-size: 100%;
+	background-position: center;
+	
+	/*padding-top: 1%;*/
+	padding: 1%;
+	padding-left: 2%;
+	/*padding-right:15px;*/
+	
+	width:15%;
+	/*float:left;*/
+	margin-left: 2%;
+	display: inline-block;
+	font-size: 2vw;
+	
+	/*height: 1.8em;*/
+}
+
+.meni:hover{
+	background-image: url("images/meniAktivan.png");
+}
+
+
+#rightbar{
+	background-color: red;
+}
+
+#leftbar{
+	background-color: red;
+}
+
+#vijesti img{
+	width: 100%;
+	position: relative;
+}
+
+h2 { 
+   /*font-size: 2.2em;*/
+   position: absolute; 
+   top: 4%; 
+   width: 70%;
+   left: 4%;
+   text-align: left;
+
+}
+
+h2 span { 
+   color: white; 
+   font: bold;
+   font-size: 2.0em; 
+   letter-spacing: -1px; 
+   background: rgb(0, 0, 0);
+   background: rgba(0, 0, 0, 0.7);
+   box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+
+   /*padding: 10px; */
+}
+
+#vijesti{
+	background-color: rgba(128,128,128, 0.6);
+	position: relative;
+}
+
+
+/*@media all and (min-width:1800px){
+	.meni{
+		/*padding-bottom: 15px;
+		padding-top:10px;*/
+		/*font-size: 2.2em;
+		height: 2.7em;
+	}
+}
+
+/*@media all and (min-width:1550px) and (max-width: 1800px){
+	.meni{
+		/*padding-bottom: 15px;
+		padding-top:5px;*/
+		/*font-size: 2.2em;
+		height: 2.8em;
+	}
+}
+
+
+@media all and (min-width:1250px) and (max-width: 1550px){
+	.meni{
+		/*padding-bottom: 15px;
+		padding-top:5px;*/
+		/*font-size: 1.8em;
+		height: 2.4em;
+	}
+}
+
+@media all and (max-width: 1250px){	
+	.meni{
+		/*padding-bottom: 15px;*/
+		/*font-size: 1.8em;
+		height: 2.4em;
+	}
+}
+
+@media all and (max-width: 1150px){
+	.meni{
+		/*padding-bottom: 5px;*/
+		/*font-size: 1.6em;
+		height: 2.2em;
+	}
+}
+
+@media all and (max-width: 950px){
+	.meni{
+		/*padding-bottom: 10px;*/
+		/*font-size:1.4em;
+	}
+}
+
+@media all and (max-width: 850px){
+	.meni{
+		font-size:1.2em;
+	}
+}
+
+@media all and (max-width: 780px){
+	.meni{
+		display: block;
+		font-size:0.9em;
+		/*width:25%;*/
+		/*height: 2.2em;
+	}
+
+}
+
+@media all and (max-width: 620px){
+	.meni{
+		display: block;
+		font-size:0.7em;
+		/*width:25%;*/
+		/*height: 2.6em;
+	}
+}
+
+@media all and (max-width: 500px){
+	.meni{
+		display: block;
+		font-size:0.6em;
+		/*width:25%;*/
+		
+		/*height: 3.0em;
+	}
+}*/
+
+@media all and (min-width: 480px) and (max-width: 880px){
+	h2 span{
+		color: white; 
+	   	font: bold;
+	   	font-size: 1.6em; 
+	   	letter-spacing: -1px; 
+	   	background: rgb(0, 0, 0);
+	   	background: rgba(0, 0, 0, 0.7);
+	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+	}
+	h2 { 
+		/*font-size: 2.2em;*/
+		position: absolute; 
+		top: 4%; 
+		width: 70%;
+		left: 6%;
+		text-align: left;
+
+	}
+}
+
+@media all and (min-width: 480px) and (max-width: 680px){
+	h2 span{
+		color: white; 
+	   	font: bold;
+	   	font-size: 1.4em; 
+	   	letter-spacing: -1px; 
+	   	background: rgb(0, 0, 0);
+	   	background: rgba(0, 0, 0, 0.7);
+	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+	}
+	h2 { 
+		/*font-size: 2.2em;*/
+		position: absolute; 
+		top: 4%; 
+		width: 70%;
+		left: 6%;
+		text-align: left;
+
+	}
+}
+
+@media all and (max-width: 480px){
+	.meni{
+		display: block;
+		width: 50%;
+		padding-bottom: 4%;
+		padding-left: 9%;
+		font-size: 3vw;
+	}
+	h2 span{
+		color: white; 
+	   	font: bold;
+	   	font-size: 1.3em; 
+	   	letter-spacing: -1px; 
+	   	background: rgb(0, 0, 0);
+	   	background: rgba(0, 0, 0, 0.7);
+	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+	}
+	h2 { 
+		/*font-size: 2.2em;*/
+		position: absolute; 
+		top: 4%; 
+		width: 70%;
+		left: 8%;
+		text-align: left;
+
+	}
+	.kolona.dva{
+		width: 33.33333%;
+	}
+	.kolona.deset{
+		width: 66.66666%;
+	}
+	.kolona.osam{
+		width: 99.99999%;
+	}
+	#leftbar{
+		display: none;
+	}
+	#rightbar{
+		display: none;
+	}
+}
