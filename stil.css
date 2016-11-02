@@ -92,6 +92,7 @@ body{
 
 #logo{
 	float:left;
+	padding: 5px;
 	/*background-color: yellow;*/
 
 }
@@ -164,11 +165,292 @@ h2 span {
    /*padding: 10px; */
 }
 
+h3 { 
+   /*font-size: 2.2em;*/
+   position: absolute; 
+   top: 4%; 
+   width: 70%;
+   left: 8%;
+   text-align: left;
+
+}
+
+h3 span { 
+   color: white; 
+   font: bold;
+   font-size: 1.6em; 
+   letter-spacing: -1px; 
+   background: rgb(0, 0, 0);
+   background: rgba(0, 0, 0, 0.7);
+   box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+
+   /*padding: 10px; */
+}
+
+h4{
+	font-size:1.6em;
+	padding-left: 2%;
+}
+#kontakt{
+	padding-top: 0;
+	/*background-color: yellow;*/
+}
+#malilogo{
+	/*background-color: white;*/
+	padding: 1px;
+}
+#malilogo img{
+	width: 100%;
+	position: relative;
+}
+
 #vijesti{
 	background-color: rgba(128,128,128, 0.6);
 	position: relative;
 }
 
+#mainkontakt{
+	background-color: rgba(128,128,128, 0.6);
+	position: relative;
+}
+
+#projekat img{
+	width: 100%;
+	position: relative;
+	height: 200px;
+}
+
+#projekat{
+	background-color: rgba(128,128,128, 0.6);
+	position: relative;
+}
+
+#partner img{
+	width: 100%;
+	position: relative;
+	transition: all 0.3s;
+
+	/*height: 200px;*/
+
+	/*box-shadow: 0px 10px  10px 5px rgba(0,0,0,0.5);*/
+}
+
+#partner:hover img{
+	transform:scale(1.1);
+	box-shadow: 0 10px 10px 5px rgba(0,0,0,0.4);
+} 
+
+#partner{
+	/*background-color: rgba(128,128,128, 0.6);*/
+	position: relative;
+	/*box-shadow: 0 10px 10px 5px rgba(0,0,0,0.4);*/
+}
+
+/*#partner span{
+	/*rgba(0,0,0,0.3)*/
+  	/*opacity: 1;
+  	transition: opacity 0.3s ease-in-out:
+}*/
+#partner div::after{
+	box-shadow: 0 50px 30px 10px rgba(0,0,0,0.8);
+  	opacity: 1;
+  	transition: opacity 2s ease-in-out;
+}
+
+#partner div:hover::after{
+	opacity:1;
+	
+}
+
+/*#partner span:hover::after{
+	opacity: 1.0;
+}*/
+
+@media all and (min-width: 4500px){
+	.meni{
+		font-size: 0.5vw;
+	}
+	#projekat img{
+	width: 100%;
+	position: relative;
+	height: 400px;
+}
+}
+
+@media all and (min-width: 2500px) and (max-width: 4500px){
+	.meni{
+		font-size: 1vw;
+	}
+	#projekat img{
+	width: 100%;
+	position: relative;
+	height: 300px;
+}
+}
+
+
+@media all and (min-width: 480px) and (max-width: 880px){
+	h2 span{
+		color: white; 
+	   	font: bold;
+	   	font-size: 1.6em; 
+	   	letter-spacing: -1px; 
+	   	background: rgb(0, 0, 0);
+	   	background: rgba(0, 0, 0, 0.7);
+	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+	}
+	h2 { 
+		/*font-size: 2.2em;*/
+		position: absolute; 
+		top: 4%; 
+		width: 70%;
+		left: 6%;
+		text-align: left;
+
+	}
+	h3 { 
+	   /*font-size: 2.2em;*/
+	   position: absolute; 
+	   top: 4%; 
+	   width: 70%;
+	   left: 12%;
+	   text-align: left;
+
+	}
+
+	h3 span { 
+	   color: white; 
+	   font: bold;
+	   font-size: 1.4em; 
+	   letter-spacing: -1px; 
+	   background: rgb(0, 0, 0);
+	   background: rgba(0, 0, 0, 0.7);
+	   box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+
+	   /*padding: 10px; */
+	}
+	#projekat img{
+		width: 100%;
+		position: relative;
+		height: 160px;
+	}
+}
+
+@media all and (min-width: 480px) and (max-width: 680px){
+	h2 span{
+		color: white; 
+	   	font: bold;
+	   	font-size: 1.4em; 
+	   	letter-spacing: -1px; 
+	   	background: rgb(0, 0, 0);
+	   	background: rgba(0, 0, 0, 0.7);
+	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+	}
+	h2 { 
+		/*font-size: 2.2em;*/
+		position: absolute; 
+		top: 4%; 
+		width: 70%;
+		left: 6%;
+		text-align: left;
+
+	}
+	h3 { 
+	   /*font-size: 2.2em;*/
+	   position: absolute; 
+	   top: 4%; 
+	   width: 70%;
+	   left: 14%;
+	   text-align: left;
+
+	}
+
+	h3 span { 
+	   color: white; 
+	   font: bold;
+	   font-size: 1.2em; 
+	   letter-spacing: -1px; 
+	   background: rgb(0, 0, 0);
+	   background: rgba(0, 0, 0, 0.7);
+	   box-shadow: 8px 0 0 rgba(0, 0, 0, 0.7), -8px 0 0 rgba(0, 0, 0, 0.7);
+
+	   /*padding: 10px; */
+	}
+	#projekat img{
+		width: 100%;
+		position: relative;
+		height: 120px;
+	}
+}
+
+@media all and (max-width: 480px){
+	.meni{
+		display: block;
+		width: 50%;
+		padding-bottom: 4%;
+		padding-left: 9%;
+		font-size: 3vw;
+	}
+	h2 span{
+		color: white; 
+	   	font: bold;
+	   	font-size: 1.3em; 
+	   	letter-spacing: -1px; 
+	   	background: rgb(0, 0, 0);
+	   	background: rgba(0, 0, 0, 0.7);
+	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+	}
+	h2 { 
+		/*font-size: 2.2em;*/
+		position: absolute; 
+		top: 4%; 
+		width: 70%;
+		left: 8%;
+		text-align: left;
+
+	}
+	h3 { 
+	   /*font-size: 2.2em;*/
+	   position: absolute; 
+	   top: 4%; 
+	   width: 70%;
+	   left: 12%;
+	   text-align: left;
+
+	}
+
+	h3 span { 
+	   color: white; 
+	   font: bold;
+	   font-size: 1.0em; 
+	   letter-spacing: -1px; 
+	   background: rgb(0, 0, 0);
+	   background: rgba(0, 0, 0, 0.7);
+	   box-shadow: 5px 0 0 rgba(0, 0, 0, 0.7), -5px 0 0 rgba(0, 0, 0, 0.7);
+
+	   /*padding: 10px; */
+	}
+	.kolona.dva{
+		width: 33.33333%;
+	}
+	.kolona.deset{
+		width: 66.66666%;
+	}
+	.kolona.osam{
+		width: 99.99999%;
+	}
+	#leftbar{
+		display: none;
+	}
+	#rightbar{
+		display: none;
+	}
+	#projekat img{
+		width: 100%;
+		position: relative;
+		height: 100px;
+	}
+}
 
 /*@media all and (min-width:1800px){
 	.meni{
@@ -255,88 +537,3 @@ h2 span {
 		/*height: 3.0em;
 	}
 }*/
-
-@media all and (min-width: 480px) and (max-width: 880px){
-	h2 span{
-		color: white; 
-	   	font: bold;
-	   	font-size: 1.6em; 
-	   	letter-spacing: -1px; 
-	   	background: rgb(0, 0, 0);
-	   	background: rgba(0, 0, 0, 0.7);
-	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
-	}
-	h2 { 
-		/*font-size: 2.2em;*/
-		position: absolute; 
-		top: 4%; 
-		width: 70%;
-		left: 6%;
-		text-align: left;
-
-	}
-}
-
-@media all and (min-width: 480px) and (max-width: 680px){
-	h2 span{
-		color: white; 
-	   	font: bold;
-	   	font-size: 1.4em; 
-	   	letter-spacing: -1px; 
-	   	background: rgb(0, 0, 0);
-	   	background: rgba(0, 0, 0, 0.7);
-	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
-	}
-	h2 { 
-		/*font-size: 2.2em;*/
-		position: absolute; 
-		top: 4%; 
-		width: 70%;
-		left: 6%;
-		text-align: left;
-
-	}
-}
-
-@media all and (max-width: 480px){
-	.meni{
-		display: block;
-		width: 50%;
-		padding-bottom: 4%;
-		padding-left: 9%;
-		font-size: 3vw;
-	}
-	h2 span{
-		color: white; 
-	   	font: bold;
-	   	font-size: 1.3em; 
-	   	letter-spacing: -1px; 
-	   	background: rgb(0, 0, 0);
-	   	background: rgba(0, 0, 0, 0.7);
-	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
-	}
-	h2 { 
-		/*font-size: 2.2em;*/
-		position: absolute; 
-		top: 4%; 
-		width: 70%;
-		left: 8%;
-		text-align: left;
-
-	}
-	.kolona.dva{
-		width: 33.33333%;
-	}
-	.kolona.deset{
-		width: 66.66666%;
-	}
-	.kolona.osam{
-		width: 99.99999%;
-	}
-	#leftbar{
-		display: none;
-	}
-	#rightbar{
-		display: none;
-	}
-}
