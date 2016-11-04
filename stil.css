@@ -517,6 +517,12 @@ h4{
 		position: relative;
 		height: 120px;
 	}
+	#formaautizam{
+		width: 49.99999%;
+	}
+	#rightbar{
+		font-size: 1.4em;
+	}
 }
 
 @media all and (max-width: 480px){
