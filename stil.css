@@ -71,9 +71,6 @@ body{
 #header{
 	float:right;
 	padding-left: 0;
-
-	/*background-color: green;*/
-	
 }
 
 #header a{
@@ -94,8 +91,6 @@ body{
 #logo{
 	float:left;
 	padding: 5px;
-	/*background-color: yellow;*/
-
 }
 
 .aktivan{
@@ -112,18 +107,13 @@ body{
 	background-size: 100%;
 	background-position: center;
 	
-	/*padding-top: 1%;*/
 	padding: 1%;
 	padding-left: 2%;
-	/*padding-right:15px;*/
 	
 	width:15%;
-	/*float:left;*/
 	margin-left: 2%;
 	display: inline-block;
 	font-size: 2vw;
-	
-	/*height: 1.8em;*/
 }
 
 .meni:hover{
@@ -198,7 +188,6 @@ body{
 	background-color: rgba(128,128,128, 0.6);
 	position: relative;
 	border-radius: 25px;
-	/*padding: 2%;*/
 }
 
 #autizam p{
@@ -228,7 +217,6 @@ body{
 	background-color: rgba(128,128,128, 0.6);
 	position: relative;
 	border-radius: 25px;
-	/*padding: 2%;*/
 }
 
 #formaugrozeni{
@@ -241,7 +229,6 @@ body{
 }
 
 h2 { 
-   /*font-size: 2.2em;*/
    position: absolute; 
    top: 4%; 
    width: 70%;
@@ -258,18 +245,14 @@ h2 span {
    background: rgb(0, 0, 0);
    background: rgba(0, 0, 0, 0.7);
    box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
-
-   /*padding: 10px; */
 }
 
 h3 { 
-   /*font-size: 2.2em;*/
    position: absolute; 
    top: 4%; 
    width: 70%;
    left: 8%;
    text-align: left;
-
 }
 
 h3 span { 
@@ -280,23 +263,21 @@ h3 span {
    background: rgb(0, 0, 0);
    background: rgba(0, 0, 0, 0.7);
    box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
-
-   /*padding: 10px; */
 }
 
 h4{
 	font-size:1.6em;
 	padding-left: 2%;
 }
+
 #kontakt{
 	padding-top: 0;
-
-	/*background-color: yellow;*/
 }
+
 #malilogo{
-	/*background-color: white;*/
 	padding: 1px;
 }
+
 #malilogo img{
 	width: 100%;
 	position: relative;
@@ -338,10 +319,6 @@ h4{
 	width: 100%;
 	position: relative;
 	transition: all 0.3s;
-
-	/*height: 200px;*/
-
-	/*box-shadow: 0px 10px  10px 5px rgba(0,0,0,0.5);*/
 }
 
 #mainpartner{
@@ -355,16 +332,9 @@ h4{
 } 
 
 #partner{
-	/*background-color: rgba(128,128,128, 0.6);*/
 	position: relative;
-	/*box-shadow: 0 10px 10px 5px rgba(0,0,0,0.4);*/
 }
 
-/*#partner span{
-	/*rgba(0,0,0,0.3)*/
-  	/*opacity: 1;
-  	transition: opacity 0.3s ease-in-out:
-}*/
 #partner div::after{
 	box-shadow: 0 50px 30px 10px rgba(0,0,0,0.8);
   	opacity: 1;
@@ -375,7 +345,6 @@ h4{
 	opacity:1;
 	
 }
-
 
 #mainonama{
 	background-color: rgba(128,128,128, 0.8);
@@ -397,19 +366,15 @@ h4{
 	border-radius: 25px;
 }
 
-/*#partner span:hover::after{
-	opacity: 1.0;
-}*/
-
 @media all and (min-width: 4500px){
 	.meni{
 		font-size: 0.5vw;
 	}
 	#projekat img{
-	width: 100%;
-	position: relative;
-	height: 400px;
-}
+		width: 100%;
+		position: relative;
+		height: 400px;
+	}
 }
 
 @media all and (min-width: 2500px) and (max-width: 4500px){
@@ -417,14 +382,13 @@ h4{
 		font-size: 1vw;
 	}
 	#projekat img{
-	width: 100%;
-	position: relative;
-	height: 300px;
-}
+		width: 100%;
+		position: relative;
+		height: 300px;
+	}
 }
 
-
-@media all and (min-width: 480px) and (max-width: 880px){
+@media all and (min-width: 680px) and (max-width: 880px){
 	h2 span{
 		color: white; 
 	   	font: bold;
@@ -435,7 +399,6 @@ h4{
 	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
 	}
 	h2 { 
-		/*font-size: 2.2em;*/
 		position: absolute; 
 		top: 4%; 
 		width: 70%;
@@ -444,13 +407,11 @@ h4{
 
 	}
 	h3 { 
-	   /*font-size: 2.2em;*/
 	   position: absolute; 
 	   top: 4%; 
 	   width: 70%;
 	   left: 12%;
 	   text-align: left;
-
 	}
 
 	h3 span { 
@@ -461,8 +422,6 @@ h4{
 	   background: rgb(0, 0, 0);
 	   background: rgba(0, 0, 0, 0.7);
 	   box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
-
-	   /*padding: 10px; */
 	}
 	#projekat img{
 		width: 100%;
@@ -483,7 +442,6 @@ h4{
 	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
 	}
 	h2 { 
-		/*font-size: 2.2em;*/
 		position: absolute; 
 		top: 4%; 
 		width: 70%;
@@ -492,7 +450,6 @@ h4{
 
 	}
 	h3 { 
-	   /*font-size: 2.2em;*/
 	   position: absolute; 
 	   top: 4%; 
 	   width: 70%;
@@ -509,8 +466,6 @@ h4{
 	   background: rgb(0, 0, 0);
 	   background: rgba(0, 0, 0, 0.7);
 	   box-shadow: 8px 0 0 rgba(0, 0, 0, 0.7), -8px 0 0 rgba(0, 0, 0, 0.7);
-
-	   /*padding: 10px; */
 	}
 	#projekat img{
 		width: 100%;
@@ -543,7 +498,6 @@ h4{
 	   	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
 	}
 	h2 { 
-		/*font-size: 2.2em;*/
 		position: absolute; 
 		top: 4%; 
 		width: 70%;
@@ -552,7 +506,6 @@ h4{
 
 	}
 	h3 { 
-	   /*font-size: 2.2em;*/
 	   position: absolute; 
 	   top: 4%; 
 	   width: 70%;
@@ -569,8 +522,6 @@ h4{
 	   background: rgb(0, 0, 0);
 	   background: rgba(0, 0, 0, 0.7);
 	   box-shadow: 5px 0 0 rgba(0, 0, 0, 0.7), -5px 0 0 rgba(0, 0, 0, 0.7);
-
-	   /*padding: 10px; */
 	}
 	.kolona.dva{
 		width: 33.33333%;
@@ -603,90 +554,3 @@ h4{
 		display: inline-block;
 	}
 }
-
-
-/*@media all and (min-width:1800px){
-	.meni{
-		/*padding-bottom: 15px;
-		padding-top:10px;*/
-		/*font-size: 2.2em;
-		height: 2.7em;
-	}
-}
-
-/*@media all and (min-width:1550px) and (max-width: 1800px){
-	.meni{
-		/*padding-bottom: 15px;
-		padding-top:5px;*/
-		/*font-size: 2.2em;
-		height: 2.8em;
-	}
-}
-
-
-@media all and (min-width:1250px) and (max-width: 1550px){
-	.meni{
-		/*padding-bottom: 15px;
-		padding-top:5px;*/
-		/*font-size: 1.8em;
-		height: 2.4em;
-	}
-}
-
-@media all and (max-width: 1250px){	
-	.meni{
-		/*padding-bottom: 15px;*/
-		/*font-size: 1.8em;
-		height: 2.4em;
-	}
-}
-
-@media all and (max-width: 1150px){
-	.meni{
-		/*padding-bottom: 5px;*/
-		/*font-size: 1.6em;
-		height: 2.2em;
-	}
-}
-
-@media all and (max-width: 950px){
-	.meni{
-		/*padding-bottom: 10px;*/
-		/*font-size:1.4em;
-	}
-}
-
-@media all and (max-width: 850px){
-	.meni{
-		font-size:1.2em;
-	}
-}
-
-@media all and (max-width: 780px){
-	.meni{
-		display: block;
-		font-size:0.9em;
-		/*width:25%;*/
-		/*height: 2.2em;
-	}
-
-}
-
-@media all and (max-width: 620px){
-	.meni{
-		display: block;
-		font-size:0.7em;
-		/*width:25%;*/
-		/*height: 2.6em;
-	}
-}
-
-@media all and (max-width: 500px){
-	.meni{
-		display: block;
-		font-size:0.6em;
-		/*width:25%;*/
-		
-		/*height: 3.0em;
-	}
-}*/
