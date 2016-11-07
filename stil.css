@@ -483,11 +483,16 @@ h4{
 @media all and (max-width: 480px){
 	.meni{
 		display: block;
-		width: 50%;
+		width: 100%;
 		padding-bottom: 4%;
 		padding-left: 9%;
 		font-size: 3vw;
+		float: left;
 	}
+	#header{
+			float:left;
+			padding-left: 0;
+		}
 	h2 span{
 		color: white; 
 	   	font: bold;
@@ -527,7 +532,7 @@ h4{
 		width: 33.33333%;
 	}
 	.kolona.deset{
-		width: 66.66666%;
+		width: 33.33333%;
 	}
 	.kolona.osam{
 		width: 99.99999%;
