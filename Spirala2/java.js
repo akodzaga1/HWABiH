@@ -272,7 +272,7 @@ function ValidateDatumVolonteri(){
     else {
 
         document.getElementById("datumVolonteri").style.backgroundColor="#ff4d4d";
-        document.getElementById("labelaDatumVolonteri").innerHTML = "Nepravilan datum!";
+        document.getElementById("labelaDatumVolonteri").innerHTML = "Nepravilan datum! (mm/dd/yyyy)";
 
         return false;
 
