@@ -1,98 +1,31 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML>
-<HEAD>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="stil.css">
 
-<TITLE>
-HWA BiH
-</TITLE>
-
-</HEAD>
-<BODY>
-<div class="kolona dvanaest" id="zaglavlje">
-	<div class="kolona dva" id="logo">
-		<img src="images/logo20.png" alt="logo">
-	</div>
-
-	<div class="kolona deset" id="header">
-		<a href="index.html">
-		<div class="meni">
-			Naslovna
-		</div>
-		</a>
-		<a href="onama.html">
-		<div class="meni">
-			O nama
-		</div>
-		</a>
-		<a href="projekti.html">
-		<div class="meni">
-			Projekti
-		</div>
-		</a>
-		<a href="partneri.html">
-		<div class="meni">
-			Partneri
-		</div>
-		</a>
-		<a href="kontakti.html">
-		<div class="meni">
-			Kontakti
-		</div>
-		</a>
-
-	</div>
-</div>
-
-
-<div class="kolona dva" id="leftbar">
-	<div><a href="autizam.html"><img src="images/autizam.jpg" alt="autizam"></a></div>
-</div>
 <div class="kolona osam" id="mainugrozeni">
 	<div class="kolona dvanaest" id="ugrozeni">
 		<p>Prijavite se u našu bazu volontera</p>
 		<form>
 			<div class="kolona dvanaest" id="formaugrozeni">
 				Prezime:<br>
-				<input placeholder="Unesite prezime" value="" type="text" name="prezimeVolonter" required>
-				<br>&nbsp;<br>
+				<input placeholder="Unesite prezime" value="" type="text" name="prezimeVolonter" id="prezimeVolonteri" onchange="ValidatePrezimeVolonteri()" required>
+				<div class="labela" id="labelaPrezimeVolonteri"></div>
+				<br>
 				Ime:<br>
-				<input placeholder="Unesite ime" value="" type="text" name="imeVolonter" required>
-				<br>&nbsp;<br>
+				<input placeholder="Unesite ime" value="" type="text" name="imeVolonter" id="imeVolonteri" onchange="ValidateImeVolonteri()" required>
+				<div class="labela" id="labelaImeVolonteri"></div>
+				<br>
 				Datum rođenja:<br>
-				<input type="date" name="datumVolonter" required>
-				<br>&nbsp;<br>
+				<input type="date" name="datumVolonteri" id="datumVolonteri" onchange="ValidateDatumVolonteri()" required>
+				<div class="labela" id="labelaDatumVolonteri"></div>
+				<br>
 				Adresa:<br>
-				<input placeholder="Unesite adresu" value="" type="text" name="adresaVolonter" required>
-				<br>&nbsp;<br>
+				<input placeholder="Unesite adresu" value="" type="text" name="adresaVolonteri" id="adresaVolonteri" onchange="ValidateAdresaVolonteri()" required>
+				<div class="labela" id="labelaAdresaVolonteri"></div>
+				<br>
 				Vaša fotografija:<br>
-				<input type="file" accept="image/*" name="fotografijaUgrozeni" required>
-				<br>&nbsp;<br>
-				<button type="submit" name="prijaviSe">Prijavi se</button>
+				<input type="file" accept="image/*" name="fotografijaVolonteri" id="fotografijaVolonteri" required>
+				<div class="labela" id="labelaFotografijaVolonteri"></div>
+				<br>
+				<button type="submit" onclick="ValidateVolonteri()" name="prijaviSe">Prijavi se</button>
 			</div>
 		</form>
 	</div>
 </div>
-<div class="kolona dva" id="rightbar">
-<a href="ugrozeni.html">Prijavite ugrožene porodice</a>
-<p>
-<a href="volonteri.html">Prijavite se za volontera</a>
-</p>
-</div>
-<div class="kolona sest" id="mobilni">
-	<a href="autizam.html"><img src="images/autizam.jpg" alt="autizam"></a>
-</div>
-<div class="kolona sest" id="mobilnidesno">
-	<a href="ugrozeni.html">Prijavite ugrožene porodice</a>
-<p>
-<a href="volonteri.html">Prijavite se za volontera</a>
-</p>
-</div>
-<div class="kolona dvanaest" id="footer">
-Copyright © TKC Team 2016.
-</div>
-
-</BODY>
-</HTML>

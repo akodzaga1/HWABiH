@@ -4,41 +4,57 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="stil.css">
+<script type="text/javascript" src="java.js"></script>
+<script src="ucitaj.js"></script>
 
 <TITLE>
 HWA BiH
 </TITLE>
 
 </HEAD>
-<BODY>
+<BODY onload="ucitajNaslovnu()">
+
+<div id="LBpozadina" onclick="zatvoriLB()">
+	<div id="LB">
+		<img id="velikaslika">
+	</div>
+</div>
+
 <div class="kolona dvanaest" id="zaglavlje">
 	<div class="kolona dva" id="logo">
 		<img src="images/logo20.png" alt="logo">
 	</div>
 
 	<div class="kolona deset" id="header">
-		<a href="index.html">
-		<div class="meni aktivan">
+		<a href="#" onclick="ucitajNaslovnu()">
+		<div class="meni" id="aktivnaNaslovna">
 			Naslovna
 		</div>
 		</a>
-		<a href="onama.html">
-		<div class="meni">
+		<a href="#" onclick="ucitajONama()">
+		<div class="meni" id="aktivnaONama">
 			O nama
 		</div>
 		</a>
-		<a href="projekti.html">
-		<div class="meni">
-			Projekti
+		
+		<div class="meni" id="aktivnaProjekti" href="#" onmouseleave="zatvori()">
+		<div class="dropmeni" onmouseover="mojaFunkcija()" onclick="ucitajProjekte()">
+			Projekti</div>
+			<div id="myDropdown" class="dropdownsadrzaj">
+    		<a href="#" onclick="ucitajSH()">Social housing</a>
+    		<a href="#" onclick="ucitajRAI()">Return and integration</a>
+    		<a href="#" onclick="ucitajSTRD()">Support to Roma decade</a>
+    		<a href="#" onclick="ucitajEAI()">Education and inclusion</a>
+   
 		</div>
-		</a>
-		<a href="partneri.html">
-		<div class="meni">
+		</div>
+		<a href="#" onclick="ucitajPartnere()">
+		<div class="meni" id="aktivnaPartneri">
 			Partneri
 		</div>
 		</a>
-		<a href="kontakti.html">
-		<div class="meni">
+		<a href="#" onclick="ucitajKontakte()">
+		<div class="meni" id="aktivnaKontakti">
 			Kontakti
 		</div>
 		</a>
@@ -49,35 +65,24 @@ HWA BiH
 
 
 <div class="kolona dva" id="leftbar">
-	<a href="autizam.html"><img src="images/autizam.jpg" alt="autizam"></a>
+	<div class="aktivnaAutizam"><a href="#" onclick="ucitajAutizam()"><img src="images/autizam.jpg" alt="autizam"></a></div>
 </div>
-<div class="kolona osam" id="mainvijesti">
-	<div class="kolona dvanaest" id="vijesti">
-		<img src="images/1baruthana_velika.JPG" alt="novost jedan">
-		<h2><span>NOVE STANOVE U STAROM GRADU DOBILO 11 PORODICA</span></h2>
-	</div>
-	<div class="kolona dvanaest" id="vijesti">
-		<img src="images/naslovKTBanovici_velika.jpg" alt="novost dva">
-		<h2><span>ZAPOČELA IZGRADNJA ZGRADA SOCIJALNOG STANOVANJA ZA ROME U BANOVIĆIMA</span></h2>
-	</div>
-	<div class="kolona dvanaest" id="vijesti">
-		<img src="images/Grant_naslov_velika.jpg" alt="novost tri">
-		<h2><span>ISPORUKA GRANTOVA ZA EKONOMSKU ODRŽIVOST</span></h2>
-	</div>
+<div id="kontejnerAjax">
+
 </div>
 <div class="kolona dva" id="rightbar">
-<a href="ugrozeni.html">Prijavite ugrožene porodice</a>
+<a href="#" onclick="ucitajUgrozene()">Prijavite ugrožene porodice</a>
 <p>
-<a href="volonteri.html">Prijavite se za volontera</a>
+<a href="#" onclick="ucitajVolontere()">Prijavite se za volontera</a>
 </p>
 </div>
 <div class="kolona sest" id="mobilni">
-	<a href="autizam.html"><img src="images/autizam.jpg" alt="autizam"></a>
+	<a href="#" onclick="ucitajAutizam()"><img src="images/autizam.jpg" alt="autizam"></a>
 </div>
 <div class="kolona sest" id="mobilnidesno">
-	<a href="ugrozeni.html">Prijavite ugrožene porodice</a>
+	<a href="#" onclick="ucitajUgrozene()">Prijavite ugrožene porodice</a>
 <p>
-<a href="volonteri.html">Prijavite se za volontera</a>
+<a href="#" onclick="ucitajVolontere()">Prijavite se za volontera</a>
 </p>
 </div>
 <div class="kolona dvanaest" id="footer">
