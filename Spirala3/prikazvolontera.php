@@ -31,7 +31,10 @@ $filexml='volonteri.xml';
     {
     	die("Nema xml-a!");
     }
-
+    header("Content-Type: application/octet-stream");
+    header("Content-Disposition: attachment; filename=volonteri.csv");
+    readfile('volonteri.csv');
+    exit();
     
 }
 

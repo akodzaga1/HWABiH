@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <porodice>
   
-</porodice>
+<porodica><prezime>Mujic</prezime><broj_clanova>5</broj_clanova><uslovi>lose</uslovi><adresa>Spasilacka 17</adresa><fotografija>Mujic.jpg</fotografija></porodica><porodica><prezime>Spahic</prezime><broj_clanova>3</broj_clanova><uslovi>lose</uslovi><adresa>Zambijska 79</adresa><fotografija>Spahic.jpg</fotografija></porodica><porodica><prezime>Kadric</prezime><broj_clanova>1</broj_clanova><uslovi>lose</uslovi><adresa>Sinana Sakica 33</adresa><fotografija>Kadric.jpg</fotografija></porodica></porodice>

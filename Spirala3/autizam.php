@@ -26,6 +26,10 @@ foreach($xml2->potpisnik as $potpisnik)
 	$pdf->SetY($poY);
 	$pdf->Cell(0,0,$redni . ". " . $potpisnik->ime . " " . $potpisnik->prezime);
 	$poY = $poY + 5;
+	if($redni%50==0 && $redni!=0) {
+   		$pdf->addPage();
+   		$poY = 20;
+}
 	$redni = $redni + 1;
 }
 

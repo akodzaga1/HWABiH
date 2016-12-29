@@ -23,13 +23,20 @@ $filexml='ugrozeni.xml';
        $xml = simplexml_load_file($filexml);
        $f = fopen('ugrozeni.csv', 'w');
        createCsv($xml, $f);
+
+
+
+
        fclose($f);
     }
     else
     {
     	die("Nema xml-a!");
     }
-
+    header("Content-Type: application/octet-stream");
+    header("Content-Disposition: attachment; filename=ugrozeni.csv");
+    readfile('ugrozeni.csv');
+    exit();
     
 }
 
