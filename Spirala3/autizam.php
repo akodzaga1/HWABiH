@@ -12,7 +12,23 @@ if(isset($_REQUEST['pdf']))
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
-$pdf->Cell(40,10,'Hello World!');
+$pdf->SetY(10);
+$pdf->SetX(10);
+$pdf->Cell(0,0,'Podrzali projekat:');
+$pdf->SetFont('Arial','I',12);
+
+$poY = 20;
+$redni = 1;
+
+$xml2 = simplexml_load_file('autizam.xml');
+foreach($xml2->potpisnik as $potpisnik)
+{
+	$pdf->SetY($poY);
+	$pdf->Cell(0,0,$redni . ". " . $potpisnik->ime . " " . $potpisnik->prezime);
+	$poY = $poY + 5;
+	$redni = $redni + 1;
+}
+
 $pdf->Output('autizam.pdf','I');
 
 }
