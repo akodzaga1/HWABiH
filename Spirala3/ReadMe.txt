@@ -1,43 +1,23 @@
 I  - Šta je uraðeno?
 
-Napravio sam skice svake od podstranica (ukupno 8). 
-
-Sve stranice su responsivne. 
-
-To sam napravio koristeæi procente za sve velièine na stranici. 
-
-Font je postavljen na 62.5% u body tagu, te su u dokumentu za velièinu fonta korištene jedinice em, odnosno omjer da je 10pt jednak 1em.
-
-Media query je korišten za poboljšanje izgleda za neke neuobièajene rezolucije prilikom kojih bi došlo do prevelikog poveæanja fonta, smanjenja slike i sl.
-
-Pomoæu media query-a su obraðene rezolucije širine ekrana: preko 4500px, izmeðu 2500 i 4500px, izmeðu 680 i 880px, 480 i 680px (što odgovara veæini tableta).
-
-Takoðer sam pomoæu media query-a uradio zadatak pravljenja izgleda za mobilne ureðaje, gdje sam za maksimalnu širinu mobilnog ekrana uzeo 480px.
-
-Grid view sam omoguæio na naèin da sam odredio dvanest klasa za kolone širine 100%/12 (8.33333%) do 100% (odnosno 99.99999%).
-
-Implementirao sam tri html forme.
-
-Prva se nalazi na stranici autizam.html, gdje se posjetioci mogu potpisati imenom i prezimenom da podržavaju projekat (link na tu stranicu se nalazi u slici u lijevom sidebar-u).
-
-Druga forma je forma za prijavu ugroženih porodica (link u desnom sidebar-u).
-
-Treæa je forma za prijavu u bazu volontera (link u desnom sidebar-u).
-
-Meni web stranice se nalazi u vrhu stranice i sadrži linkove na 5 podstranica (naslovna.html, onama.html, projekti.html, partneri.html, kontakti.html).
-
-Vidljiv je na svakoj podstranici.
-
-Linkovi na ostale podstranice se nalaze u sidebar-ima i vidljivi su na svakoj podstranici.
-
-Svaka podstranica koja je u trenutku aktivna sadrži button linka na samu sebe koji ima smanjen opacity (vidljivost).
-
-Izgled stranice je provjeren za sve zoomove u browseru, te u responsive ekstenziji.
-
-Izgled za mobilne ureðaje razlikuje se od onog za desktop po tome što su dugmad menija jedan ispod drugog, te što sidebar-i zauzimaju poziciju ispod glavnog dijela (koji je proširen na 100% širine mobilnog ekrana).
-
-Napravio sam skice svake od podstranica i za mobilne ureðaje.
-
+1.) Napravio sam formu za login u desnom sidebar-u. 
+Podaci za admina (username i password) nalaze se u XML fajlu podaci.xml.
+Napravio sam serijalizaciju podataka iz sve tri forme u posebne XML fajlove. 
+Unos je omoguæen svima, dok su izmjena, prikazivanje i brisanje podataka omoguæeni samo administratoru.
+Izmjena, prikazivanje i brisanje podataka omoguæeni su za ugrozeni.xml i volonteri.xml.
+XSS ranjivost koda sam sprijeèio zabranom prihvatanja html entiteta unesenih u formu, ali i dodatnim php validacijama.
+2.) Adminu sam omoguæio download podataka o volonterima i ugroženim (volonteri.csv, ugrozeni.csv).
+Link za download csv-a se nalazi u desnom sidebar-u stranica prikazvolontera i prikazugrozenih.
+3.) Omoguæio sam generisanje izvještaja u obliku pdf fajla za formu na stranici autizam.
+U pdf-u se nalaze imena i prezimena osoba koje su podržale projekat svojim potpisom u formi.
+Link za generisanje pdf-a se nalazi u desnom sidebar-u stranice autizam.
+4.) Napravio sam opciju pretrage sa prijedlozima na stranicama prikazvolontera i prikazugrozenih.
+Volonteri se pretražuju po imenu i prezimenu, a ugroženi po prezimenu i adresi.
+Dok se kuca stalno se ažuriraju ponuðeni podaci koji zadovoljavaju pretragu i prikazuje ih se najviše 10.
+Nakon klika na dugme search prikazuju se svi podaci koji zadovoljavaju datu pretragu i ako ih je više od 10.
+Primjer: Funkcionalnost se najbolje može testirati na stranici prikazvolontera pretragom slova a.
+Od moguæih 12 podataka 11 ih sadrži slovo a, ali dok se ne klikne dugme search prikazuje ih se 10.
+Nakon klika prikazuje se i 11. rezultat, dok se onaj koji ne sadrži slovo a ne prikazuje.
 
 
 II  - Šta nije uraðeno?
@@ -60,28 +40,44 @@ Nisam primijetio nijedan bug.
 
 V  - Lista fajlova u formatu NAZIVFAJLA - Opis u vidu jedne reèenice šta se u fajlu nalazi
 
-AUTIZAM.HTML - Stranica za podršku izgradnje centra za autizam, sadrži formu (ime i prezime).
+AUTIZAM.PHP - Stranica za podršku izgradnje centra za autizam, sadrži formu (ime i prezime).
 
-INDEX.HTML - Poèetna stranica web stranice koja sadrži najnovije vijesti u vidu 3 velike slike sa naslovima.
+EDUCATIONANDINCLUSION.PHP - Stranica pojedinaènog projekta
+INDEX.PHP - Poèetna stranica web stranice koja sadrži najnovije vijesti u vidu 3 velike slike sa naslovima.
 
-KONTAKTI.HTML - Stranica na kojoj se nalaze informacije kako kontaktirati organizaciju.
+KONTAKTI.PHP - Stranica na kojoj se nalaze informacije kako kontaktirati organizaciju.
 
-ONAMA.HTML - Stranica sa kratkim tekstom koji opisuje organizaciju i njen rad od nastanka do danas.
+ONAMA.PHP - Stranica sa kratkim tekstom koji opisuje organizaciju i njen rad od nastanka do danas.
 
-PARTNERI.HTML - Stranica koja sadrži 8 linkovanih ikona partnera organizacije koje upuæuju na njihove web stranice.
+PARTNERI.PHP - Stranica koja sadrži 8 linkovanih ikona partnera organizacije koje upuæuju na njihove web stranice.
 
-PROJEKTI.HTML - Stranica koja sadrži spisak projekata organizacije u vidu manjih slika sa naslovom.
+PRETRAGAUGROZENI.PHP - PHP skripta za pretragu ugroženih.
+PRETRAGAVOLONTERI.PHP - PHP skripta za pretragu volontera.
+PRIKAZUGROZENIH.PHP - Stranica koja sadrži prikaz podataka iz ugrozeni.xml. Može joj pristupiti samo administrator.
+PRIKAZVOLONTERA.PHP - Stranica koja sadrži prikaz podataka iz volonteri.xml. Može joj pristupiti samo administrator.
+PROJEKTI.PHP - Stranica koja sadrži spisak projekata organizacije u vidu manjih slika sa naslovom.
 
-UGROZENI.HTML - Stranica koja sadrži formu za prijavljivanje ugroženih porodica.
+RETURNANDINTEGRATION.PHP - Stranica pojedinaènog projekta
+SOCIALHOUSING.PHP - Stranica pojedinaènog projekta koja sadrži galeriju slika sa zoom-om
+SUPPORTTOROMADECADE.PHP - Stranica pojedinaènog projekta
+UGROZENI.PHP - Stranica koja sadrži formu za prijavljivanje ugroženih porodica.
 
-VOLONTERI.HTML - Stranica koja sadrži formu za prijavu u bazu volontera organizacije.
+VOLONTERI.PHP - Stranica koja sadrži formu za prijavu u bazu volontera organizacije.
 
 STIL.CSS - Css fajl koji definiše kompletan stil stranice, te izgled za razlièite rezolucije (media query-i).
 
+JAVA.JS - JS dokument koji sadrži funkcije za obradu zoom-a slika iz galerije.
+VALIDATE.JS - JS dokument koji sadrži funkcije za validaciju.
 README.MD - Poèetni readme fajl (ime, prezime, broj indeksa, kratak opis teme).
 
 README.TXT - Ovaj fajl.
 
+AUTIZAM.XML - XML fajl koji sadrži serijalizirane podatke iz forme na stranici autizam.php.
+PODACI.XML - XML fajl koji sadrži login podatke o administratoru.
+UGROZENI.CSV - CSV fajl izvještaj o testnim podacima.
+UGROZENI.XML - XML fajl koji sadrži testne podatke o ugroženim porodicama.
+VOLONTERI.CSV - CSV fajl izvještaj o testnim podacima.
+VOLONTERI.XML - XML fajl koji sadrži testne podatke o volonterima.
 AUTIZAM.JPG - Skica stranice autizam.html.
 
 AUTIZAM_MOBILE.JPG - Skica mobilne verzije stranice autizam.html.
@@ -158,3 +154,4 @@ RETURNANDINTEGRATION.JPG - Naslovna slika projekta.
 SOCIALHOUSING.JPG - Naslovna slika projekta.
 
 SUPPORTTOROMA.JPG - Naslovna slika projekta.
++ fotografije testnih podataka (volonteri i ugroženi)
