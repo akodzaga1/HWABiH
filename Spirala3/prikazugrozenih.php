@@ -14,6 +14,8 @@ $korisnik = "";
 $formaIzmjena = 0;
 $fotografija = "";
 
+$prikazi = 1;
+
 if(isset($_REQUEST['csv']))
 {
 $filexml='ugrozeni.xml';
@@ -301,6 +303,31 @@ if(isset($_REQUEST['logout'])) {
 <script type="text/javascript" src="java.js"></script>
 <script type="text/javascript" src="validate.js"></script>
 
+
+<script>
+function showResult(str) {
+  if (str.length==0) { 
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    return;
+  }
+  	
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+    } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("livesearch").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","pretragaugrozeni.php?q="+str,true);
+  xmlhttp.send();
+
+}
+</script>
+
 <TITLE>
 HWA BiH
 </TITLE>
@@ -374,55 +401,24 @@ HWA BiH
 	$xml2 = simplexml_load_file('ugrozeni.xml');
 	
 	$indeks = 0;
-	/*print '<div class="kolona sest" id="karton">';
-	print "Obriši (indeks):<br><form method='post' action='prikazugrozenih.php?obrisi=1'>";
-	print '<input value="0" type="number" name="obrisiIndeks" id="obrisiIndeks" min="0" required>';
-	print '<br>
-			<button type="submit" name="obrisi">Obriši</button></form></div>';*/
 
-	foreach($xml2->porodica as $porodica) { 
-	    print '<div class="kolona sest" id="karton">';   
-	    print "<form method='post' action='prikazugrozenih.php?obrisi=1'>"; 
-	    print '<input type="hidden" name="obrisiIndeks" id="obrisiIndeks" value="';  
-	    print $indeks;
-		print '">';
-
-		$foto = $porodica->fotografija;
-		echo '<img src="images/'; 
-		echo $foto;
-		echo '"';
-		echo ' alt="ugrozeni_slika">';
-		echo 'Prezime: ';
-		echo $porodica->prezime;
-		echo '<br>Broj članova domaćinstva: ';
-		echo $porodica->broj_clanova;
-		echo '<br>Uslovi života: ';
-		echo $porodica->uslovi;
-		echo '<br>Adresa: ';
-		echo $porodica->adresa;
-		echo '<br>Indeks: (';
-		echo $indeks;
-		echo ')';
-		print '<br><button type="submit" name="x">x</button>';
-	    print '</form>';
-	    print "<form method='post' action='prikazugrozenih.php?edit=1'>"; 
-	    print '<input type="hidden" name="izmijeniIndeks" id="izmijeniIndeks" value="';  
-	    print $indeks;
-		print '">';
-		print '<button type="submit" name="izmijeni">Izmijeni</button>';
-	    print '</form>';
-	    print '</div>';
-	    $indeks = $indeks + 1;
-
-
-	}
-
-	
-	?>
+?>
 <div class="kolona dvanaest" id="karton_siroki">
 		<form method='post' action='prikazugrozenih.php?edit=1'>
 				Izmijeni (indeks):<br>
-				<input value="0" type="number" name="izmijeniIndeks" id="izmijeniIndeks" min="0" required><button type="submit" name="potvrdi">Potvrdi</button>
+				<?php
+				if(isset($_POST['izmijeniIndeks']))
+				{
+					$ind = $_POST['izmijeniIndeks'];
+				}
+				else
+				{
+					$ind = 0;
+				}
+				print '<input value="';
+				print $ind;
+				print '" type="number" name="izmijeniIndeks" id="izmijeniIndeks" min="0" required><button type="submit" name="potvrdi">Potvrdi</button>'
+				?>
 				
 		</form>
 		<?php
@@ -499,6 +495,128 @@ HWA BiH
 		}
 		?>
 				</div>
+
+<div class="kolona dvanaest" id="karton_siroki">
+	<?php
+	if(isset($_REQUEST['pretraga']) && isset($_REQUEST['search']))
+	{
+	print '<form method="post" action="prikazugrozenih.php?search=1">
+    <input type="text" size="30" value="" id="string" name="string" onkeyup="showResult(this.value)"><button name="search" id="search" type="submit" onclick="showResult(this.value)">Search</button></form>';
+    print "<a href='prikazugrozenih.php'>Povratak na prikaz svih ugroženih porodica</a>";
+	}
+	else if(isset($_REQUEST['search']))
+	{
+		print '<form method="post" action="prikazugrozenih.php?search=1">
+    <input type="text" size="30" value="" id="string" name="string" onkeyup="showResult(this.value)"><button name="search" id="search" type="submit" onclick="showResult(this.value)">Search</button></form>';
+    print "<a href='prikazugrozenih.php'>Povratak na prikaz svih ugroženih porodica</a>";
+	}
+	
+    else
+    {
+    print '<form method="post" action="prikazugrozenih.php?pretraga=1&search=1">
+    <input type="hidden" name="noSuggestion" id="noSuggestion" value="1">
+	<button name="pretraga" id="pretraga" type="submit">Pretraga</button>
+	</form>';
+    }
+
+    ?>
+	</div>
+<div id="livesearch">
+      <?php
+if(isset($_REQUEST['search'])) {
+	$prikazi = 0;
+$uspjesno = 2;
+$xmlDoc=new DOMDocument();
+$xmlDoc->load("ugrozeni.xml");
+
+$x=$xmlDoc->getElementsByTagName('volonter');
+ $hint="";
+ if(isset($_POST['string']))
+    $q = $_POST['string'];
+  else
+    $q = "";
+ if (strlen($q)>0) {
+  $hint="";
+  for($i=0; $i<($x->length); $i++) {
+    $foto = $x->item($i)->getElementsByTagName('fotografija');
+    $prezime=$x->item($i)->getElementsByTagName('prezime');
+    $uslovi=$x->item($i)->getElementsByTagName('uslovi');
+    $broj_clanova=$x->item($i)->getElementsByTagName('broj_clanova');
+    $adresa=$x->item($i)->getElementsByTagName('adresa');
+    if ($prezime->item(0)->nodeType==1 && $adresa->item(0)->nodeType==1) {
+      if (stristr($prezime->item(0)->childNodes->item(0)->nodeValue,$q) || stristr($adresa->item(0)->childNodes->item(0)->nodeValue,$q)) {
+        if ($hint=="") {
+          $hint = '<div class="kolona sest" id="karton">' . "<form method='post' action='prikazugrozenih.php?obrisi=1'>" . '<input type="hidden" name="obrisiIndeks" id="obrisiIndeks" value="' .  $i . '"><img src="images/' . $foto->item(0)->childNodes->item(0)->nodeValue . '"' . ' alt="ugrozeni_slika">Prezime: ' . $prezime->item(0)->childNodes->item(0)->nodeValue . '<br>Broj članova domaćinstva: ' . $broj_clanova->item(0)->childNodes->item(0)->nodeValue . '<br>Uslovi života: ' . $uslovi->item(0)->childNodes->item(0)->nodeValue . '<br>Adresa: ' . $adresa->item(0)->childNodes->item(0)->nodeValue . '<br>Indeks: (' . $i . ')' . '<br><button type="submit" name="x">x</button>' . '</form>' . "<form method='post' action='prikazugrozenih.php?edit=1'>" . '<input type="hidden" name="izmijeniIndeks" id="izmijeniIndeks" value="' . $i . '">' . '<button type="submit" name="izmijeni">Izmijeni</button>' . '</form>' . '</div>';
+
+        } else {
+         $hint = $hint . '<div class="kolona sest" id="karton">' . "<form method='post' action='prikazugrozenih.php?obrisi=1'>" . '<input type="hidden" name="obrisiIndeks" id="obrisiIndeks" value="' .  $i . '"><img src="images/' . $foto->item(0)->childNodes->item(0)->nodeValue . '"' . ' alt="ugrozeni_slika">Prezime: ' . $prezime->item(0)->childNodes->item(0)->nodeValue . '<br>Broj članova domaćinstva: ' . $broj_clanova->item(0)->childNodes->item(0)->nodeValue . '<br>Uslovi života: ' . $uslovi->item(0)->childNodes->item(0)->nodeValue . '<br>Adresa: ' . $adresa->item(0)->childNodes->item(0)->nodeValue . '<br>Indeks: (' . $i . ')' . '<br><button type="submit" name="x">x</button>' . '</form>' . "<form method='post' action='prikazugrozenih.php?edit=1'>" . '<input type="hidden" name="izmijeniIndeks" id="izmijeniIndeks" value="' . $i . '">' . '<button type="submit" name="izmijeni">Izmijeni</button>' . '</form>' . '</div>';
+        }
+      }
+    }
+  }
+}
+if(isset($_POST['noSuggestion']))
+{
+	$response = "";
+}
+else if ($hint=="") {
+  $response="nema rezultata";
+} else {
+  $response=$hint;
+}
+
+echo $response;
+
+}
+?>
+
+    </div>
+
+
+
+<?php
+if($prikazi == 1)
+	{
+	foreach($xml2->porodica as $porodica) { 
+	    print '<div class="kolona sest" id="karton">';   
+	    print "<form method='post' action='prikazugrozenih.php?obrisi=1'>"; 
+	    print '<input type="hidden" name="obrisiIndeks" id="obrisiIndeks" value="';  
+	    print $indeks;
+		print '">';
+
+		$foto = $porodica->fotografija;
+		echo '<img src="images/'; 
+		echo $foto;
+		echo '"';
+		echo ' alt="ugrozeni_slika">';
+		echo 'Prezime: ';
+		echo $porodica->prezime;
+		echo '<br>Broj članova domaćinstva: ';
+		echo $porodica->broj_clanova;
+		echo '<br>Uslovi života: ';
+		echo $porodica->uslovi;
+		echo '<br>Adresa: ';
+		echo $porodica->adresa;
+		echo '<br>Indeks: (';
+		echo $indeks;
+		echo ')';
+		print '<br><button type="submit" name="x">x</button>';
+	    print '</form>';
+	    print "<form method='post' action='prikazugrozenih.php?edit=1'>"; 
+	    print '<input type="hidden" name="izmijeniIndeks" id="izmijeniIndeks" value="';  
+	    print $indeks;
+		print '">';
+		print '<button type="submit" name="izmijeni">Izmijeni</button>';
+	    print '</form>';
+	    print '</div>';
+	    $indeks = $indeks + 1;
+
+
+	}
+}
+	
+	?>
+
 
 </div>
 
