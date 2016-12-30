@@ -529,7 +529,7 @@ $uspjesno = 2;
 $xmlDoc=new DOMDocument();
 $xmlDoc->load("ugrozeni.xml");
 
-$x=$xmlDoc->getElementsByTagName('volonter');
+$x=$xmlDoc->getElementsByTagName('porodica');
  $hint="";
  if(isset($_POST['string']))
     $q = $_POST['string'];
