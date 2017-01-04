@@ -1,83 +1,85 @@
-I  - äta je uraeno?
+Link na openshift (http://wt-akodzaga1-wt-akodzaga1.44fs.preview.openshiftapps.com/)
+
+I  - ≈†ta je uraƒëeno?
 
 1.) Napravio sam formu za login u desnom sidebar-u. 
 Podaci za admina (username i password) nalaze se u XML fajlu podaci.xml.
 Napravio sam serijalizaciju podataka iz sve tri forme u posebne XML fajlove. 
-Unos je omoguÊen svima, dok su izmjena, prikazivanje i brisanje podataka omoguÊeni samo administratoru.
-Izmjena, prikazivanje i brisanje podataka omoguÊeni su za ugrozeni.xml i volonteri.xml.
-XSS ranjivost koda sam sprijeËio zabranom prihvatanja html entiteta unesenih u formu, ali i dodatnim php validacijama.
-2.) Adminu sam omoguÊio download podataka o volonterima i ugroûenim (volonteri.csv, ugrozeni.csv).
+Unos je omoguƒáen svima, dok su izmjena, prikazivanje i brisanje podataka omoguƒáeni samo administratoru.
+Izmjena, prikazivanje i brisanje podataka omoguƒáeni su za ugrozeni.xml i volonteri.xml.
+XSS ranjivost koda sam sprijeƒçio zabranom prihvatanja html entiteta unesenih u formu, ali i dodatnim php validacijama.
+2.) Adminu sam omoguƒáio download podataka o volonterima i ugro≈æenim (volonteri.csv, ugrozeni.csv).
 Link za download csv-a se nalazi u desnom sidebar-u stranica prikazvolontera i prikazugrozenih.
-3.) OmoguÊio sam generisanje izvjeötaja u obliku pdf fajla za formu na stranici autizam.
-U pdf-u se nalaze imena i prezimena osoba koje su podrûale projekat svojim potpisom u formi.
+3.) Omoguƒáio sam generisanje izvje≈°taja u obliku pdf fajla za formu na stranici autizam.
+U pdf-u se nalaze imena i prezimena osoba koje su podr≈æale projekat svojim potpisom u formi.
 Link za generisanje pdf-a se nalazi u desnom sidebar-u stranice autizam.
 4.) Napravio sam opciju pretrage sa prijedlozima na stranicama prikazvolontera i prikazugrozenih.
-Volonteri se pretraûuju po imenu i prezimenu, a ugroûeni po prezimenu i adresi.
-Dok se kuca stalno se aûuriraju ponueni podaci koji zadovoljavaju pretragu i prikazuje ih se najviöe 10.
-Nakon klika na dugme search prikazuju se svi podaci koji zadovoljavaju datu pretragu i ako ih je viöe od 10.
-Primjer: Funkcionalnost se najbolje moûe testirati na stranici prikazvolontera pretragom slova a.
-Od moguÊih 12 podataka 11 ih sadrûi slovo a, ali dok se ne klikne dugme search prikazuje ih se 10.
-Nakon klika prikazuje se i 11. rezultat, dok se onaj koji ne sadrûi slovo a ne prikazuje.
+Volonteri se pretra≈æuju po imenu i prezimenu, a ugro≈æeni po prezimenu i adresi.
+Dok se kuca stalno se a≈æuriraju ponuƒëeni podaci koji zadovoljavaju pretragu i prikazuje ih se najvi≈°e 10.
+Nakon klika na dugme search prikazuju se svi podaci koji zadovoljavaju datu pretragu i ako ih je vi≈°e od 10.
+Primjer: Funkcionalnost se najbolje mo≈æe testirati na stranici prikazvolontera pretragom slova a.
+Od moguƒáih 12 podataka 11 ih sadr≈æi slovo a, ali dok se ne klikne dugme search prikazuje ih se 10.
+Nakon klika prikazuje se i 11. rezultat, dok se onaj koji ne sadr≈æi slovo a ne prikazuje.
 
 
-II  - äta nije uraeno?
+II  - ≈†ta nije uraƒëeno?
 
 Uradio sam sve zadane zadatke.
 
 
 
-III - Bug-ovi koje ste primijetili ali niste stigli ispraviti, a znate rjeöenje (opis rjeöenja)
+III - Bug-ovi koje ste primijetili ali niste stigli ispraviti, a znate rje≈°enje (opis rje≈°enja)
 
 Nisam primijetio nijedan bug.
 
 
 
-IV  - Bug-ovi koje ste primijetili ali ne znate rjeöenje
+IV  - Bug-ovi koje ste primijetili ali ne znate rje≈°enje
 
 Nisam primijetio nijedan bug.
 
 
 
-V  - Lista fajlova u formatu NAZIVFAJLA - Opis u vidu jedne reËenice öta se u fajlu nalazi
+V  - Lista fajlova u formatu NAZIVFAJLA - Opis u vidu jedne reƒçenice ≈°ta se u fajlu nalazi
 
-AUTIZAM.PHP - Stranica za podröku izgradnje centra za autizam, sadrûi formu (ime i prezime).
+AUTIZAM.PHP - Stranica za podr≈°ku izgradnje centra za autizam, sadr≈æi formu (ime i prezime).
 
-EDUCATIONANDINCLUSION.PHP - Stranica pojedinaËnog projekta
-INDEX.PHP - PoËetna stranica web stranice koja sadrûi najnovije vijesti u vidu 3 velike slike sa naslovima.
+EDUCATIONANDINCLUSION.PHP - Stranica pojedinaƒçnog projekta
+INDEX.PHP - Poƒçetna stranica web stranice koja sadr≈æi najnovije vijesti u vidu 3 velike slike sa naslovima.
 
 KONTAKTI.PHP - Stranica na kojoj se nalaze informacije kako kontaktirati organizaciju.
 
 ONAMA.PHP - Stranica sa kratkim tekstom koji opisuje organizaciju i njen rad od nastanka do danas.
 
-PARTNERI.PHP - Stranica koja sadrûi 8 linkovanih ikona partnera organizacije koje upuÊuju na njihove web stranice.
+PARTNERI.PHP - Stranica koja sadr≈æi 8 linkovanih ikona partnera organizacije koje upuƒáuju na njihove web stranice.
 
-PRETRAGAUGROZENI.PHP - PHP skripta za pretragu ugroûenih.
+PRETRAGAUGROZENI.PHP - PHP skripta za pretragu ugro≈æenih.
 PRETRAGAVOLONTERI.PHP - PHP skripta za pretragu volontera.
-PRIKAZUGROZENIH.PHP - Stranica koja sadrûi prikaz podataka iz ugrozeni.xml. Moûe joj pristupiti samo administrator.
-PRIKAZVOLONTERA.PHP - Stranica koja sadrûi prikaz podataka iz volonteri.xml. Moûe joj pristupiti samo administrator.
-PROJEKTI.PHP - Stranica koja sadrûi spisak projekata organizacije u vidu manjih slika sa naslovom.
+PRIKAZUGROZENIH.PHP - Stranica koja sadr≈æi prikaz podataka iz ugrozeni.xml. Mo≈æe joj pristupiti samo administrator.
+PRIKAZVOLONTERA.PHP - Stranica koja sadr≈æi prikaz podataka iz volonteri.xml. Mo≈æe joj pristupiti samo administrator.
+PROJEKTI.PHP - Stranica koja sadr≈æi spisak projekata organizacije u vidu manjih slika sa naslovom.
 
-RETURNANDINTEGRATION.PHP - Stranica pojedinaËnog projekta
-SOCIALHOUSING.PHP - Stranica pojedinaËnog projekta koja sadrûi galeriju slika sa zoom-om
-SUPPORTTOROMADECADE.PHP - Stranica pojedinaËnog projekta
-UGROZENI.PHP - Stranica koja sadrûi formu za prijavljivanje ugroûenih porodica.
+RETURNANDINTEGRATION.PHP - Stranica pojedinaƒçnog projekta
+SOCIALHOUSING.PHP - Stranica pojedinaƒçnog projekta koja sadr≈æi galeriju slika sa zoom-om
+SUPPORTTOROMADECADE.PHP - Stranica pojedinaƒçnog projekta
+UGROZENI.PHP - Stranica koja sadr≈æi formu za prijavljivanje ugro≈æenih porodica.
 
-VOLONTERI.PHP - Stranica koja sadrûi formu za prijavu u bazu volontera organizacije.
+VOLONTERI.PHP - Stranica koja sadr≈æi formu za prijavu u bazu volontera organizacije.
 
-STIL.CSS - Css fajl koji definiöe kompletan stil stranice, te izgled za razliËite rezolucije (media query-i).
+STIL.CSS - Css fajl koji defini≈°e kompletan stil stranice, te izgled za razliƒçite rezolucije (media query-i).
 
-JAVA.JS - JS dokument koji sadrûi funkcije za obradu zoom-a slika iz galerije.
-VALIDATE.JS - JS dokument koji sadrûi funkcije za validaciju.
-README.MD - PoËetni readme fajl (ime, prezime, broj indeksa, kratak opis teme).
+JAVA.JS - JS dokument koji sadr≈æi funkcije za obradu zoom-a slika iz galerije.
+VALIDATE.JS - JS dokument koji sadr≈æi funkcije za validaciju.
+README.MD - Poƒçetni readme fajl (ime, prezime, broj indeksa, kratak opis teme).
 
 README.TXT - Ovaj fajl.
 
-AUTIZAM.XML - XML fajl koji sadrûi serijalizirane podatke iz forme na stranici autizam.php.
-PODACI.XML - XML fajl koji sadrûi login podatke o administratoru.
-UGROZENI.CSV - CSV fajl izvjeötaj o testnim podacima.
-UGROZENI.XML - XML fajl koji sadrûi testne podatke o ugroûenim porodicama.
-VOLONTERI.CSV - CSV fajl izvjeötaj o testnim podacima.
-VOLONTERI.XML - XML fajl koji sadrûi testne podatke o volonterima.
+AUTIZAM.XML - XML fajl koji sadr≈æi serijalizirane podatke iz forme na stranici autizam.php.
+PODACI.XML - XML fajl koji sadr≈æi login podatke o administratoru.
+UGROZENI.CSV - CSV fajl izvje≈°taj o testnim podacima.
+UGROZENI.XML - XML fajl koji sadr≈æi testne podatke o ugro≈æenim porodicama.
+VOLONTERI.CSV - CSV fajl izvje≈°taj o testnim podacima.
+VOLONTERI.XML - XML fajl koji sadr≈æi testne podatke o volonterima.
 AUTIZAM.JPG - Skica stranice autizam.html.
 
 AUTIZAM_MOBILE.JPG - Skica mobilne verzije stranice autizam.html.
@@ -128,7 +130,7 @@ AUTIZAM_MOBILE.JPG - Skica mobilne verzije stranice volonteri.html.
 
 8ECHO - Ikona partnera.
 
-AUTIZAM.JPG - Slika koja sadrûi link na podstranicu autizam.html.
+AUTIZAM.JPG - Slika koja sadr≈æi link na podstranicu autizam.html.
 
 BROSURA1.PNG - Prva slika na podstranici autizam.html.
 
@@ -143,7 +145,7 @@ LOGO_MALI.PNG - Logo na podstranici kontakti.html.
 LOGO20.PNG - Glavni logo na stranici.
 MENI.PNG - Butoon menija.
 
-MENIAKTIVAN.PNG - Button menija pri prelasku miöem.
+MENIAKTIVAN.PNG - Button menija pri prelasku mi≈°em.
 
 NASLOVKTBANOVICI_VELIKA.JPG - Naslovna slika vijesti.
 
@@ -154,4 +156,4 @@ RETURNANDINTEGRATION.JPG - Naslovna slika projekta.
 SOCIALHOUSING.JPG - Naslovna slika projekta.
 
 SUPPORTTOROMA.JPG - Naslovna slika projekta.
-+ fotografije testnih podataka (volonteri i ugroûeni)
++ fotografije testnih podataka (volonteri i ugro≈æeni)
