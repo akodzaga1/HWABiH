@@ -1,5 +1,7 @@
 <?php
 session_start();
+	$veza = new PDO("mysql:dbname=moja_baza;host=localhost;port=3306;charset=utf8", "admin", "admin");
+    $veza->exec("set names utf8");
 $uspjesno = 0;
 $greska_ime = 0;
 $greska_prezime = 0;
@@ -20,11 +22,18 @@ $pdf->SetFont('Arial','I',12);
 $poY = 20;
 $redni = 1;
 
-$xml2 = simplexml_load_file('autizam.xml');
-foreach($xml2->potpisnik as $potpisnik)
+
+$potpisnici = $veza->query( "SELECT * FROM `autizam`");
+//$xml2 = simplexml_load_file('autizam.xml');
+if(!$potpisnici)
+		{
+	    	print "Greška";
+	    	die();
+	   	}
+foreach($potpisnici as $potpisnik)
 {
 	$pdf->SetY($poY);
-	$pdf->Cell(0,0,$redni . ". " . $potpisnik->ime . " " . $potpisnik->prezime);
+	$pdf->Cell(0,0,$redni . ". " . $potpisnik["ime"] . " " . $potpisnik["prezime"]);
 	$poY = $poY + 5;
 	if($redni%50==0 && $redni!=0) {
    		$pdf->addPage();
@@ -75,7 +84,29 @@ if(count($_POST) > 0)
 			else
 			{
 			 	$uspjesno = 3;
-			 	if(file_exists('autizam.xml')){
+
+$duplikat = false;
+
+
+	    $potpisnici = $veza->query( "SELECT * FROM `autizam`");
+	    if(!$potpisnici)
+		{
+	    	print "Greška";
+	    	die();
+	   	}
+	    else
+	    {
+	    	foreach($potpisnici as $potpisnik) {
+			if($potpisnik["prezime"]==$prezime && $potpisnik["ime"]==$ime)
+  			$duplikat=true;
+		}
+	}
+		if(!$duplikat)
+	    	$veza->query( "INSERT INTO `autizam` (`ID`, `prezime`, `ime`) VALUES (NULL, '".$prezime."', '".$ime."')" );
+		}
+
+
+			/* 	if(file_exists('autizam.xml')){
 		
 			$xml = simplexml_load_file('autizam.xml');
 
@@ -83,12 +114,12 @@ if(count($_POST) > 0)
 			$novi->addChild('ime', $ime);
 			$novi->addChild('prezime', $prezime);
 
-			$xml->asXml('autizam.xml');
+			$xml->asXml('autizam.xml');*/
 		}
 		else
 		{
 			
-
+/*
 			$str = '<?xml version="1.0" encoding="UTF-8"?><potpisnici></potpisnici>';
 			$xml = simplexml_load_string($str);
 
@@ -103,7 +134,7 @@ if(count($_POST) > 0)
 			$doc->preserveWhiteSpace = true;
 			$doc->loadXML($xml->asXML(), LIBXML_NOBLANKS);
 			$doc->save('autizam.xml');
-		}
+		}*/
 			}
 
 
@@ -127,7 +158,7 @@ if(count($_POST) > 0)
 	    }
 	}
 	}
-}
+//}
 
 
 if(isset($_REQUEST['logout'])) {

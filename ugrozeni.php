@@ -10,6 +10,7 @@ $greska_prezime = 0;
 $greska_clanovi = 0;
 $greska_uslovi = 0;
 $greska_adresa = 0;
+$greska_grad = 0;
 $korisnik = "";
 
 if(count($_FILES) > 0)
@@ -50,7 +51,10 @@ if(count($_POST) > 0)
 			$uslovi = $_POST['opisUgrozeni'];
 			$adresa = $_POST['adresaUgrozeni'];
 			$fotografija = $_FILES['fotografijaUgrozeni']['name'];
+			$grad = $_POST['gradUgrozeni'];
 
+
+			$grad = htmlentities($grad, ENT_COMPAT, 'UTF-8', false);
 
 
 			
@@ -101,6 +105,7 @@ if(count($_POST) > 0)
 			$novi->addChild('uslovi', $uslovi);
 			$novi->addChild('adresa', $adresa);
 			$novi->addChild('fotografija', $fotografija);
+			$novi->addChild('grad', $grad);
 
 			$xml->asXml('ugrozeni.xml');
 		}
@@ -119,7 +124,7 @@ if(count($_POST) > 0)
 			$xml->porodica->addChild('uslovi', $uslovi);
 			$xml->porodica->addChild('adresa', $adresa);
 			$xml->porodica->addChild('fotografija', $fotografija);
-			
+			$xml->porodica->addChild('grad', $grad);
 
 			$doc = new DOMDocument('1.0');
 			$doc->formatOutput = true;
@@ -290,6 +295,18 @@ HWA BiH
 					<?php
 				if($greska_adresa == 1)
 					print 'Greška u adresi!';
+				?>
+				</div>
+				<br>
+				Grad:<br>
+				<select name="gradUgrozeni" id="gradUgrozeni" onchange="ValidateGradUgrozeni()" required>
+					<option value="Sarajevo">Sarajevo</option>
+  					<option value="Tuzla">Tuzla</option>
+  				</select>
+				<div class="labela" id="labelaAdresaUgrozeni">
+					<?php
+				if($greska_grad == 1)
+					print 'Greška u gradu!';
 				?>
 				</div>
 				<br>

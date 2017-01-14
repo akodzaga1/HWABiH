@@ -153,6 +153,9 @@ HWA BiH
 		</form>';
 					
 				}?>
+				<form action="prebacivanje.php" method="post"><br>
+				<button name="login">Prebaci sve podatke u bazu</button>
+				</form>
 <p>&nbsp;<br>
 <a href="ugrozeni.php">Prijavite ugrožene porodice</a>
 </p>
@@ -210,7 +213,9 @@ if($uspjesno == 1)
 		</form>';
 					
 				}?>
-	
+	<form action="prebacivanje.php" method="post"><br>
+				<button name="login">Prebaci sve podatke u bazu</button>
+				</form>
 <p>&nbsp;<br>
 <a href="ugrozeni.php">Prijavite ugrožene porodice</a>
 </p>

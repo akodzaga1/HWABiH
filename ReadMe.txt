@@ -1,34 +1,26 @@
 I  - Šta je uraðeno?
 
-1.) Napravio sam formu za login u desnom sidebar-u. 
-Podaci za admina (username i password) nalaze se u XML fajlu podaci.xml.
-Napravio sam serijalizaciju podataka iz sve tri forme u posebne XML fajlove. 
-Unos je omoguæen svima, dok su izmjena, prikazivanje i brisanje podataka omoguæeni samo administratoru.
-Izmjena, prikazivanje i brisanje podataka omoguæeni su za ugrozeni.xml i volonteri.xml.
-XSS ranjivost koda sam sprijeèio zabranom prihvatanja html entiteta unesenih u formu, ali i dodatnim php validacijama.
-2.) Adminu sam omoguæio download podataka o volonterima i ugroženim (volonteri.csv, ugrozeni.csv).
-Link za download csv-a se nalazi u desnom sidebar-u stranica prikazvolontera i prikazugrozenih.
-3.) Omoguæio sam generisanje izvještaja u obliku pdf fajla za formu na stranici autizam.
-U pdf-u se nalaze imena i prezimena osoba koje su podržale projekat svojim potpisom u formi.
-Link za generisanje pdf-a se nalazi u desnom sidebar-u stranice autizam.
-4.) Napravio sam opciju pretrage sa prijedlozima na stranicama prikazvolontera i prikazugrozenih.
-Volonteri se pretražuju po imenu i prezimenu, a ugroženi po prezimenu i adresi.
-Dok se kuca stalno se ažuriraju ponuðeni podaci koji zadovoljavaju pretragu i prikazuje ih se najviše 10.
-Nakon klika na dugme search prikazuju se svi podaci koji zadovoljavaju datu pretragu i ako ih je više od 10.
-Primjer: Funkcionalnost se najbolje može testirati na stranici prikazvolontera pretragom slova a.
-Od moguæih 12 podataka 11 ih sadrži slovo a, ali dok se ne klikne dugme search prikazuje ih se 10.
-Nakon klika prikazuje se i 11. rezultat, dok se onaj koji ne sadrži slovo a ne prikazuje.
+a) Napravio sam MySQL bazu sa tri povezane tabele. 
+Tabela roditelj gradovi, i dvije tabele (ugrozeni i volonteri) sa foreign key na nju.
+Dodao sam u forme ugrozeni i volonteri drop-down sa ponuðenim gradovima.
+b) Napravio sam skriptu prebacivanje.php koja se aktivira dugmetom na poèetnoj stranici (vidi ga samo admin).
+Svi podaci se iz XML prebacuju u bazu (3 tabele), osim podataka o adminu, koje sam ostavio u xml-u.
+Duplikati se porede po èitavom redu i ukoliko su svi atributi isti ne ubacuje se podatak u bazu.
+c) Prepravio sam samo stranicu autizam.php, gdje se podaci uèitavaju u bazu, a pri kreiranju pdf-a se uèitavaju iz baze.
 
 
 II  - Šta nije uraðeno?
 
-Uradio sam sve zadane zadatke.
+d) Nisam napravio hosting na OpenShift.
+e) Nisam uradio.
+f) Nisam uradio.
 
 
 
 III - Bug-ovi koje ste primijetili ali niste stigli ispraviti, a znate rješenje (opis rješenja)
 
-Nisam primijetio nijedan bug.
+Nisam stigao uraditi kompletno pod c), veæ sam samo jednu stranicu stigao uraditi. 
+Jednostavno nisam imao dovoljno vremena zbog svih zadaæa u kratkom periodu. 
 
 
 
@@ -40,6 +32,7 @@ Nisam primijetio nijedan bug.
 
 V  - Lista fajlova u formatu NAZIVFAJLA - Opis u vidu jedne reèenice šta se u fajlu nalazi
 
+MOJA_BAZA.SQL - Baza podataka
 AUTIZAM.PHP - Stranica za podršku izgradnje centra za autizam, sadrži formu (ime i prezime).
 
 EDUCATIONANDINCLUSION.PHP - Stranica pojedinaènog projekta
@@ -51,6 +44,7 @@ ONAMA.PHP - Stranica sa kratkim tekstom koji opisuje organizaciju i njen rad od 
 
 PARTNERI.PHP - Stranica koja sadrži 8 linkovanih ikona partnera organizacije koje upuæuju na njihove web stranice.
 
+PREBACIVANJE.PHP - Skripta koja prebacuje sve podatke iz xml u bazu.
 PRETRAGAUGROZENI.PHP - PHP skripta za pretragu ugroženih.
 PRETRAGAVOLONTERI.PHP - PHP skripta za pretragu volontera.
 PRIKAZUGROZENIH.PHP - Stranica koja sadrži prikaz podataka iz ugrozeni.xml. Može joj pristupiti samo administrator.
